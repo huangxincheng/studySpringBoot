@@ -1,0 +1,71 @@
+server:
+  port: 8080
+
+
+# pageHelper
+pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql
+
+#Mybatis  
+mybatis:
+  mapper-locations: classpath:mybatis/*.xml
+  type-aliases-package: com.iba.entity
+spring:
+  #JPA
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  #数据源
+  datasource:
+    platform: mysql
+    url: jdbc:mysql://u6:3306/springcloud?characterEncoding=utf-8
+    username: hxc
+    password: hxc
+    type: com.iba.utils.datasource.IDynamicDataSource
+    # 当引入druid-springboot-starter包时候 无需添加duridServle 和 duridFilter 使用starter自带就行
+    druid:
+      initial-size: 5
+      min-idle: 1
+      max-active: 50
+      max-wait: 60000
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 33
+      validation-query: select 1
+      test-on-borrow: false
+      test-on-return: false
+      test-while-idle: true
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 25200000
+      remove-abandoned: true
+      remove-abandoned-timeout-millis: 1800
+      log-abandoned: true
+      query-timeout: 6000
+      transaction-query-timeout: 6000
+      remove-abandoned-timeout: 1800
+      stat-view-servlet:
+        login-username: hxc
+        login-password: hxc456
+  #文件上传
+  http:
+    multipart:
+      max-file-size: 2Mb
+      max-request-size: 10Mb
+  #单机redis
+  redis:
+    host: u6
+    port: 6379
+    password: hxc
+logging:
+  file: classpath:logback-iba.xml
+  level:
+    root: INFO
+    org.hibernate: INFO
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+    tk.mybatis.sample.mapper: TRACE
+    com.iba: DEBUG
