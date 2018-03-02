@@ -6,6 +6,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.ImportResource;
 
 
+
 @SpringBootApplication
 @ServletComponentScan
 @ImportResource(locations = {"classpath:druid/application-druid.xml"})
