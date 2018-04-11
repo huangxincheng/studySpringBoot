@@ -1,7 +1,6 @@
 server:
   port: 8080
 
-
 # pageHelper
 pagehelper:
     helperDialect: mysql
@@ -13,7 +12,11 @@ pagehelper:
 mybatis:
   mapper-locations: classpath:mybatis/*.xml
   type-aliases-package: com.iba.entity
+
 spring:
+
+  application:
+    name: dubbo-study-provider
   #JPA
   jpa:
     generate-ddl: false
@@ -23,15 +26,14 @@ spring:
   #数据源
   datasource:
     platform: mysql
-    url: jdbc:mysql://u6:3306/springcloud?characterEncoding=utf-8
+    url: jdbc:mysql://mailou.com:3306/springcloud?characterEncoding=utf-8
     username: hxc
     password: hxc
-    type: com.iba.utils.datasource.IDynamicDataSource
-    # 当引入druid-springboot-starter包时候 无需添加duridServle 和 duridFilter 使用starter自带就行
+    type: com.alibaba.druid.pool.DruidDataSource
     druid:
       initial-size: 5
       min-idle: 1
-      max-active: 50
+      max-active: 100
       max-wait: 60000
       pool-prepared-statements: true
       max-pool-prepared-statement-per-connection-size: 33
@@ -57,7 +59,7 @@ spring:
       max-request-size: 10Mb
   #单机redis
   redis:
-    host: u6
+    host: mailou
     port: 6379
     password: hxc
 logging:

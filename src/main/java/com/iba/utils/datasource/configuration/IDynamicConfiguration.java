@@ -22,9 +22,14 @@ import com.iba.utils.datasource.IDynamicDataSource;
  * @author huangxincheng
  */
 @SpringBootConfiguration
+@ConditionalOnClass(value = {IDynamicDataSource.class})
+@ConditionalOnProperty(name="spring.datasource.type",  havingValue = "com.iba.utils.datasource.IDynamicDataSource", matchIfMissing = true)
 public class IDynamicConfiguration {
 
 	private static final Logger logger = LoggerFactory.getLogger(IDynamicConfiguration.class);
+	
+	
+	
 	
 	/**
 	 * 整合自定义动态数据源
@@ -33,16 +38,15 @@ public class IDynamicConfiguration {
 	 * @author huangxincheng
 	 *
 	 */
-	@ConditionalOnClass(value = {IDynamicDataSource.class})
-	@ConditionalOnProperty(name="spring.datasource.type",  havingValue = "com.iba.utils.datasource.IDynamicDataSource", matchIfMissing = true)
 	static class IDynamic extends IDynamicConfiguration {
+		
 		@Bean
 		@Primary
 		public IDynamicDataSource dataSource() throws SQLException {
 			Map<Object,Object> sourceMap = new HashMap<>();
 			{
 				DruidDataSource u6 = new DruidDataSource();
-				u6.setUrl("jdbc:mysql://u6:3306/springcloud?characterEncoding=utf-8");
+				u6.setUrl("jdbc:mysql://mailou.com:3306/springcloud?characterEncoding=utf-8");
 				u6.setUsername("hxc");
 				u6.setPassword("hxc");
 				u6.setDriverClassName("com.mysql.jdbc.Driver");

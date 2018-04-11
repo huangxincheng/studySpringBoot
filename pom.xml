@@ -15,7 +15,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.5.10.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
 	<properties>
@@ -28,127 +28,127 @@
 		<pagehelper-spring-boot-starter.version>1.2.3</pagehelper-spring-boot-starter.version>
 		<orderbyhelper-spring-boot-starter.version>1.0.2</orderbyhelper-spring-boot-starter.version>
 		<mapper-spring-boot-starter.version>1.2.3</mapper-spring-boot-starter.version>
-		<dubbo-spring-boot-starter.version>1.0.0</dubbo-spring-boot-starter.version>
+		<dubbo-spring-boot-starter.version>2.0.0</dubbo-spring-boot-starter.version>
 	</properties>
 
-	
+
 
 	<dependencies>
 		<!-- druid-springboot-starter -->
-		<!-- <dependency>
-		    <groupId>com.alibaba</groupId>
-		    <artifactId>druid-spring-boot-starter</artifactId>
-		    <version>${druid-springboot-starter.version}</version>
-		</dependency> -->
-		
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid-spring-boot-starter</artifactId>
+			<version>${druid-springboot-starter.version}</version>
+		</dependency>
+
 		<!-- mybatis通用mapper 暂时不引用 否则JPA使用不了 -->
-		<!-- <dependency>
-		    <groupId>tk.mybatis</groupId>
-		    <artifactId>mapper-spring-boot-starter</artifactId>
-		    <version>${mapper-spring-boot-starter.version}</version>
-		</dependency> -->
-		
-		
+		<dependency>
+			<groupId>tk.mybatis</groupId> 
+			<artifactId>mapper-spring-boot-starter</artifactId> 
+			<version>${mapper-spring-boot-starter.version}</version>
+		</dependency>
+
+
 		<!-- dubbo-springboot-starter -->
 		<dependency>
-	        <groupId>com.alibaba.spring.boot</groupId>
-	        <artifactId>dubbo-spring-boot-starter</artifactId>
-	        <version>${dubbo-spring-boot-starter.version}</version>
-    	</dependency>
-		
+			<groupId>com.alibaba.spring.boot</groupId>
+			<artifactId>dubbo-spring-boot-starter</artifactId>
+			<version>${dubbo-spring-boot-starter.version}</version>
+		</dependency>
+
 		<!-- 使用自己的动态数据源 只需引入数据源包即可 -->
 		<dependency>
-		    <groupId>com.alibaba</groupId>
-		    <artifactId>druid</artifactId>
-		    <version>${druid.version}</version>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
+			<version>${druid.version}</version>
 		</dependency>
-		
+
 		<!-- orderbyhelper -->
 		<dependency>
-		    <groupId>com.cuisongliu</groupId>
-		    <artifactId>orderbyhelper-spring-boot-starter</artifactId>
-		    <version>${orderbyhelper-spring-boot-starter.version}</version>
+			<groupId>com.cuisongliu</groupId>
+			<artifactId>orderbyhelper-spring-boot-starter</artifactId>
+			<version>${orderbyhelper-spring-boot-starter.version}</version>
 		</dependency>
-		
-		<!--  pagehelper -->
+
+		<!-- pagehelper -->
 		<dependency>
-		    <groupId>com.github.pagehelper</groupId>
-		    <artifactId>pagehelper-spring-boot-starter</artifactId>
-		    <version>${pagehelper-spring-boot-starter.version}</version>
+			<groupId>com.github.pagehelper</groupId>
+			<artifactId>pagehelper-spring-boot-starter</artifactId>
+			<version>${pagehelper-spring-boot-starter.version}</version>
 		</dependency>
-	
+
 		<!-- mybatis-springboot-starter -->
 		<dependency>
-		    <groupId>org.mybatis.spring.boot</groupId>
-		    <artifactId>mybatis-spring-boot-starter</artifactId>
-		    <version>${mybatis-springboot-starter.version}</version>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>${mybatis-springboot-starter.version}</version>
 		</dependency>
-	
-		<!--  mail -->
+
+		<!-- mail -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-mail</artifactId>
 		</dependency>
-	
+
 		<!-- Redis -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-redis</artifactId>
 		</dependency>
-		
+
 		<!-- WebJars Jquery -->
 		<dependency>
 			<groupId>org.webjars</groupId>
 			<artifactId>jquery</artifactId>
 			<version>2.1.4</version>
 		</dependency>
-		
+
 		<!-- Apo -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-aop</artifactId>
 		</dependency>
-		
+
 		<!-- JPA -->
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
-		
+		</dependency> -->
+
 		<!-- freemarker模板 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-freemarker</artifactId>
 		</dependency>
-		
+
 		<!-- Web -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
-	
+
 		<!-- DevTools -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-		
+
 		<!-- Mysql -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-		
+
 		<!-- Tomcat -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
 			<scope>provided</scope>
 		</dependency>
-		
+
 		<!-- Test -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
