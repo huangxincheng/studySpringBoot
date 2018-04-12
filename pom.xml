@@ -28,7 +28,7 @@
 		<pagehelper-spring-boot-starter.version>1.2.3</pagehelper-spring-boot-starter.version>
 		<orderbyhelper-spring-boot-starter.version>1.0.2</orderbyhelper-spring-boot-starter.version>
 		<mapper-spring-boot-starter.version>1.2.3</mapper-spring-boot-starter.version>
-		<dubbo-spring-boot-starter.version>2.0.0</dubbo-spring-boot-starter.version>
+		<dubbo-spring-boot-starter.version>0.1.0</dubbo-spring-boot-starter.version>
 	</properties>
 
 
@@ -47,13 +47,19 @@
 			<artifactId>mapper-spring-boot-starter</artifactId> 
 			<version>${mapper-spring-boot-starter.version}</version>
 		</dependency>
-
+		
+		<dependency>
+		    <groupId>com.github.sgroschupf</groupId>
+		    <artifactId>zkclient</artifactId>
+		    <version>0.1</version>
+		</dependency>
+	
 
 		<!-- dubbo-springboot-starter -->
 		<dependency>
-			<groupId>com.alibaba.spring.boot</groupId>
-			<artifactId>dubbo-spring-boot-starter</artifactId>
-			<version>${dubbo-spring-boot-starter.version}</version>
+		    <groupId>com.alibaba.boot</groupId>
+		    <artifactId>dubbo-spring-boot-starter</artifactId>
+		    <version>${dubbo-spring-boot-starter.version}</version>
 		</dependency>
 
 		<!-- 使用自己的动态数据源 只需引入数据源包即可 -->

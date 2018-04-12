@@ -13,10 +13,33 @@ mybatis:
   mapper-locations: classpath:mybatis/*.xml
   type-aliases-package: com.iba.entity
 
+
+endpoints:
+  dubbo:
+    enabled: true
+dubbo:
+  scan:
+    base-packages: com.iba
+  application:
+    id: study-spring-boot
+    name: study-spring-boot
+    qos-enable: true
+    qos-port: 22222
+    
+  protocol:
+    id: dubbo
+    name: dubbo
+    port: 12345
+    status: server
+    
+  registry:
+    id: i_register 
+    address: zookeeper://mailou.com:2181
+
 spring:
 
   application:
-    name: dubbo-study-provider
+    name: studySpringBoot
   #JPA
   jpa:
     generate-ddl: false
