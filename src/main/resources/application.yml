@@ -1,5 +1,3 @@
-server:
-  port: 8080
 
 # pageHelper
 pagehelper:
@@ -29,7 +27,7 @@ dubbo:
   protocol:
     id: dubbo
     name: dubbo
-    port: 12345
+    port: 20088
     status: server
     
   registry:
@@ -37,19 +35,27 @@ dubbo:
     address: zookeeper://mailou.com:2181
 
 spring:
+  # 环境
+  profiles:
+    active:
+    - dev
+  # jackson格式化
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: Asia/Chongqing 
 
   application:
     name: studySpringBoot
-  #JPA
-  jpa:
-    generate-ddl: false
-    show-sql: true
-    hibernate:
-      ddl-auto: none
+#  #JPA
+#  jpa:
+#    generate-ddl: false
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: none
   #数据源
   datasource:
     platform: mysql
-    url: jdbc:mysql://mailou.com:3306/springcloud?characterEncoding=utf-8
+    url: jdbc:mysql://mailou.com:3306/springcloud?useUnicode=true&characterEncoding=utf-8&useSSL=false
     username: hxc
     password: hxc
     type: com.alibaba.druid.pool.DruidDataSource
@@ -92,5 +98,5 @@ logging:
     org.hibernate: INFO
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
     org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
-    tk.mybatis.sample.mapper: TRACE
     com.iba: DEBUG
+    com.iba.dao: TRACE

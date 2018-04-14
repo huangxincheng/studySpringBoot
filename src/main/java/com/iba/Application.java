@@ -12,8 +12,10 @@ import org.springframework.context.annotation.ImportResource;
 import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
 
+import tk.mybatis.spring.annotation.MapperScan;
 
 
+@MapperScan(basePackages = "com.iba.dao")
 @SpringBootApplication
 @ServletComponentScan
 @ImportResource(locations = {"classpath:druid/application-druid.xml"})

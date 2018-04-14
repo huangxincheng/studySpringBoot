@@ -10,11 +10,12 @@ import com.iba.dubbo.DubboDemoService;
 @RestController
 public class DubboController {
 
-	@Reference(version = "1.0.0")
-	private  DubboDemoService demoService;
+	//@Reference(version = "1.0.0")
+	//private  DubboDemoService demoService;
 	
 	@RequestMapping
 	public String sayHello() {
-		return demoService.sayHello();
+		//return demoService.sayHello();
+		return "hello";
 	}
 }
