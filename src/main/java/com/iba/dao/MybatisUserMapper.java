@@ -8,7 +8,8 @@ import org.apache.ibatis.annotations.Select;
 
 import com.iba.entity.User;
 
-@Mapper
+//@Mapper 
+// 在Appliction中配置了包扫描 无须加上Mapper注解
 public interface MybatisUserMapper {
 	
 	
